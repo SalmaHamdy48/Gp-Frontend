@@ -29,17 +29,14 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { HomeComponent } from './pages/home/home.component';
 import { RecommendationComponent } from './pages/recommendation/recommendation.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     SignupComponent,
-    HomeComponent,
     RecommendationComponent,
-    // Recommendation1Component,
-    // ProfileComponent
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +49,7 @@ import { RecommendationComponent } from './pages/recommendation/recommendation.c
     SignupComponent,
     LoginComponent,
     RecommendationComponent,
-    // ProfileComponent
+    ProfileComponent
   ]
 })
 export class AuthModule {}
