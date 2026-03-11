@@ -9,10 +9,6 @@
 
 // }
 
-
-
-
-
 // import { Component } from '@angular/core';
 // import { CommonModule } from '@angular/common';
 
@@ -21,7 +17,7 @@
 //   standalone: true,
 //   imports: [CommonModule],
 //   templateUrl: './profile.component.html',
-//   styleUrls: ['./profile.component.scss']     
+//   styleUrls: ['./profile.component.scss']
 // })
 // export class ProfileComponent {
 //   // Dummy user data
@@ -40,10 +36,6 @@
 //     // Open file picker or trigger upload
 //   }
 // }
-
-
-
-
 
 // import { Component } from '@angular/core';
 // import { CommonModule } from '@angular/common';
@@ -82,11 +74,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'; // ✅ Import FormsModule
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
   // User data
@@ -94,9 +85,15 @@ export class ProfileComponent {
   userEmail = 'abc.def@example.com';
 
   // Active tab
-  activeTab: 'profile' | 'closet' = 'profile';
+  // activeTab: 'profile' | 'closet' = 'profile';
 
-  setActiveTab(tab: 'profile' | 'closet') {
+  // setActiveTab(tab: 'profile' | 'closet') {
+  //   this.activeTab = tab;
+  // }
+
+  activeTab: 'profile' | 'closet' | 'favorites' = 'profile';
+
+  setActiveTab(tab: 'profile' | 'closet' | 'favorites') {
     this.activeTab = tab;
   }
 
@@ -115,13 +112,3 @@ export class ProfileComponent {
     console.log('Upload photo clicked');
   }
 }
-
-
-
-
-
-
-
-
-
-
