@@ -1,0 +1,105 @@
+<div class="profile-page">
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="nav-left">
+        <h1 class="logo">FitFusion ✨</h1>
+
+        <div class="nav-buttons">
+          <button routerLink="/vto" class="nav-btn">Virtual Try-On</button>
+          <button routerLink="/recommendations" class="nav-btn active">
+            Recommendations
+          </button>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <button class="profile-btn">
+          <img src="assets/Icons/User.png" class="icon" />
+          Profile
+        </button>
+
+        <button class="signout-btn">
+          <img src="assets/Icons/LogOut.png" class="icon" />
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+
+  <main class="main-content">
+    <h1 class="page-title">My Profile</h1>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <button
+        class="tab"
+        [class.active]="activeTab === 'profile'"
+        (click)="setActiveTab('profile')"
+      >
+        Profile Info
+      </button>
+
+      <button
+        class="tab"
+        [class.active]="activeTab === 'closet'"
+        (click)="setActiveTab('closet')"
+      >
+        My Closet
+      </button>
+
+      <button
+        class="tab"
+        [class.active]="activeTab === 'favorites'"
+        (click)="setActiveTab('favorites')"
+      >
+        Favorite Outfits
+      </button>
+    </div>
+
+    <!-- PROFILE INFO CONTENT -->
+    <section *ngIf="activeTab === 'profile'" class="card">
+      <div class="card-header">
+        <h2>Profile Information</h2>
+        <p>Manage your profile picture and details</p>
+      </div>
+
+      <div class="card-content">
+        <!-- AVATAR -->
+        <div class="photo-upload">
+          <img src="assets/Icons/UserCircle@2x.png" class="avatar" />
+
+          <div class="upload-controls">
+            <button class="upload-btn">Upload Photo</button>
+
+            <span>This photo will be used for virtual try-on</span>
+          </div>
+        </div>
+
+        <!-- USER INFO -->
+        <div class="info-fields">
+          <div class="field-group">
+            <label>Name</label>
+            <div class="field-value">{{ userName }}</div>
+          </div>
+
+          <div class="field-group">
+            <label>Email</label>
+            <div class="field-value">{{ userEmail }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MY CLOSET -->
+    <div *ngIf="activeTab === 'closet'" class="empty-section">Nothing yet</div>
+
+    <!-- FAVORITE OUTFITS -->
+    <div *ngIf="activeTab === 'favorites'" class="empty-section">
+      Nothing yet
+    </div>
+  </main>
+</div>
