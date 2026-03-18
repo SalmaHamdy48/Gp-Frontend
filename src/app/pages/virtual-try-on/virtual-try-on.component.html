@@ -1,34 +1,4 @@
-<nav class="navbar">
-  <div class="navbar-container">
-    <div class="left-menu">
 
-        <!-- Logo -->
-        <div class="logo">FitFusion ✨</div>
-
-        <!-- Tabs -->
-        <div class="nav-links">
-        <a routerLink="/vto" routerLinkActive="active-tab" class="tab-btn">Virtual Try-On</a>
-        <a routerLink="/recommendations" routerLinkActive="active-tab" class="tab-btn">Recommendations</a>
-        </div>
-    </div>
-
-    <!-- Right Side -->
-    <div class="right-menu">
-
-      <div class="profile" routerLink="/profile">
-        <img src="assets/icons/User.png" class="icon">
-        <span>Profile</span>
-      </div>
-
-      <div class="signout">
-        <img src="assets/icons/LogOut.png" class="icon">
-        <span>Sign Out</span>
-      </div>
-
-    </div>
-
-  </div>
-</nav>
 
 <div class="container">
 
@@ -90,7 +60,7 @@
         <img [src]="itemPreview" class="preview">
       </ng-container>
       <ng-template #noItem>
-        <img src="assets/icons/Upload.png" class="upload-icon">
+        <img src="assets/Icons/Upload.png" class="upload-icon">
         <p>Click to upload clothing image</p>
       </ng-template>
       <input type="file" hidden #itemInput accept="image/*" (change)="onItemUpload($event)">

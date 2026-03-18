@@ -103,9 +103,9 @@ h1{
   display: flex;
   max-width: 1000px;
   height: 36px;
-  background-color: #FFE9F2; /* الخلفية الوردية للتاب container */
+  background-color: #FFE9F2; 
   border-radius: 16px;
-  padding: 4px;              /* مسافة بين التاب النشط والخلفية */
+  padding: 4px;              
   box-sizing: border-box;
 }
 
@@ -124,9 +124,9 @@ h1{
 }
 
 .tabs-container button.active {
-  background-color: #FFFFFF;      /* التاب النشط أبيض */
-  color: #F5A3C7;               /* نص وردي */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* optional depth */
+  background-color: #FFFFFF;      
+  color: #F5A3C7;               
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
 }
 
 .upload-card {
@@ -155,12 +155,12 @@ h1{
     font-size:14px;
     font-weight:500;
 }
-/* كل Upload Box */
+
 .upload-box {
   margin-bottom: 25px;
 }
 
-/* Drop area */
+
 .drop-area {
   border: 2px dashed #ccc;
   border-radius: 10px;
@@ -175,7 +175,6 @@ h1{
   background-color: #fff0f5;
 }
 
-/* Preview Image */
 .preview {
   max-width: 100%;
   max-height: 200px;
@@ -183,7 +182,7 @@ h1{
   object-fit: cover;
 }
 
-/* Upload texts */
+
 .drop-area p {
   margin: 10px 0 0;
   font-size: 14px;
@@ -191,12 +190,12 @@ h1{
 }
 .upload-btn {
   display: inline-block;
-  margin-top: 15px;        /* مسافة فوق */
-  padding: 8px 16px;       /* حشوة داخلية */
+  margin-top: 15px;        
+  padding: 8px 16px;       
   background-color: #F5A3C7;
   color: white;
   border: none;
-  border-radius: 8px;      /* زوايا مستديرة */
+  border-radius: 8px;      
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -204,15 +203,14 @@ h1{
 }
 
 .upload-btn:hover {
-  background-color: #ff7bac; /* لون مختلف عند hover */
-  transform: translateY(-2px); /* رفع خفيف */
+  background-color: #ff7bac; 
+  transform: translateY(-2px); 
 }
 
 .upload-btn:active {
-  transform: translateY(0); /* ضغط عند النقر */
+  transform: translateY(0); 
 }
 
-/* Upload icon */
 .upload-icon {
  align-items: center;
 }

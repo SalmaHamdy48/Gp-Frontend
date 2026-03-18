@@ -22,9 +22,15 @@ interface Occasion {
   styleUrls: ['./recommendation.component.scss'],
 })
 export class RecommendationComponent implements OnInit {
-  deleteItem(_t45: any, arg1: string) {
-    throw new Error('Method not implemented.');
+ deleteItem(item: any, category: string) {
+  if (category === 'top') {
+    this.tops = this.tops.filter(i => i !== item);
+  } else if (category === 'bottom') {
+    this.bottoms = this.bottoms.filter(i => i !== item);
+  } else if (category === 'shoe') {
+    this.shoes = this.shoes.filter(i => i !== item);
   }
+}
 
   isClosetEmpty: boolean = true;
   selectedTab: string = 'use-closet';
@@ -191,4 +197,5 @@ export class RecommendationComponent implements OnInit {
       occasion: '',
     };
   }
+  
 }

@@ -30,6 +30,8 @@ import { ProfileComponent } from "./features/auth/pages/profile/profile.componen
 import { LoginComponent } from './features/auth/pages/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { VirtualTryOnComponent } from './pages/virtual-try-on/virtual-try-on.component';
+import { SharedModule } from './shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { VirtualTryOnComponent } from './pages/virtual-try-on/virtual-try-on.com
     FormsModule,
     AuthModule,
     AppRoutingModule,
+    SharedModule,
+    RouterModule
 
     // LoginComponent,
     // SignupComponent

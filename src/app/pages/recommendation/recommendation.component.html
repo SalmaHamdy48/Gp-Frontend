@@ -1,41 +1,4 @@
-<nav class="navbar">
-  <div class="navbar-container">
-    <div class="nav-left">
-      <div class="logo">FitFusion ✨</div>
-
-      <div class="nav-buttons">
-        <button
-          routerLink="/vto"
-          routerLinkActive="active-tab"
-          class="nav-btn vtr"
-        >
-          Virtual Try-On
-        </button>
-
-        <button
-          routerLink="/recommendations"
-          routerLinkActive="active-tab"
-          class="nav-btn rec"
-        >
-          Recommendations
-        </button>
-      </div>
-    </div>
-
-    <div class="nav-right">
-      <div class="profile" routerLink="/profile">
-        <img src="assets/Icons/User.png" class="icon" />
-        <span>Profile</span>
-      </div>
-
-      <div class="signout">
-        <img src="assets/Icons/LogOut.png" class="icon" />
-        <span>Sign Out</span>
-      </div>
-    </div>
-  </div>
-</nav>
-
+<div class="container">
 <div class="main-content">
   <h1 class="outfit-recommendation">Outfit Recommendations 💖✨</h1>
 
@@ -60,6 +23,7 @@
       Upload Pieces
     </button>
   </div>
+
 
   <!-- CLOSET TAB -->
 
@@ -110,7 +74,7 @@
                   title="Remove item"
                   (click)="deleteItem(item, 'top')"
                 >
-                  <img src="assets/Icons/X.png" alt="" />
+                  <img src="assets/Icons/X.png" alt="XX" />
                 </span>
               </div>
             </div>
@@ -428,4 +392,5 @@
       <button class="add-btn" (click)="addItem()">Add Item</button>
     </div>
   </div>
+</div>
 </div>

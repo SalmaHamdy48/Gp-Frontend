@@ -29,7 +29,8 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { RecommendationComponent } from './pages/recommendation/recommendation.component';
+import { RecommendationComponent } from '../../pages/recommendation/recommendation.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { RecommendationComponent } from './pages/recommendation/recommendation.c
     FormsModule,
     AuthRoutingModule,
     RouterModule,
+    SharedModule
     // BrowserModule
   ],
   exports:[
