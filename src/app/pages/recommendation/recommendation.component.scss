@@ -145,6 +145,9 @@
   background: white;
   border: 1px solid #eee;
   color: #4a2c3b;
+  
+  margin-bottom: 20px;
+
 }
 
 .small, .empty {
@@ -154,6 +157,8 @@
   font-weight: 400;
   line-height: 24px;
   text-align: center;
+
+  // width: 30%;
 }
 
 /* ================= Buttons ================= */
@@ -165,6 +170,8 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
+
+  // width: 30%;
 }
 
 /* ================= Upload Grid ================= */
@@ -305,18 +312,76 @@ select {
   cursor: pointer;
 }
 
-.recommend-btn {
-  color: #fff;
-  border: none;
-  font-family: "Segoe UI Emoji";
+// .recommend-btn {
+//   color: #fff;
+//   border: none;
+//   font-family: "Segoe UI Emoji";
+//   font-size: 16px;
+//   font-weight: 500;
+//   padding: 10px 18px;
+//   border-radius: 10px;
+//   background: #f5a3c7;
+//   cursor: pointer;
+// }
+
+
+
+.recommend-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px; /* space between icon and text */
+
+  padding: 14px 26px;
   font-size: 16px;
   font-weight: 500;
-  padding: 10px 18px;
-  border-radius: 10px;
+
+  color: white;
   background: #f5a3c7;
+  border: none;
+  border-radius: 10px;
+
   cursor: pointer;
+
+  transition: 0.2s;
+
+
+  // width: 30%;
+
+  margin-left: 75px;
 }
 
+.recommend-btn:hover{
+  background:#ec8fb8;
+}
+
+// .recommend-container {
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   // margin-top: 120px;
+// }
+
+.recommend-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 30px;   /* nice spacing from card */
+}
+
+.sparkle-icon{
+  width:16px;
+  height:16px;
+}
+
+.outfit-recommendation,
+.subtitle {
+  align-self: flex-start;
+}
 /* ================= Modal ================= */
 .modal-overlay {
   position: fixed;

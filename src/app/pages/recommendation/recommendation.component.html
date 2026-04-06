@@ -30,9 +30,9 @@
   <div class="card" *ngIf="activeTab === 'closet'">
     <h3>Your Closet</h3>
 
-    <p class="small">
+    <!-- <p class="small">
       Select an occasion to get outfit recommendations from your saved closet
-    </p>
+    </p> -->
 
     <div class="empty" *ngIf="tops.length + bottoms.length + shoes.length === 0">
       <p>Your closet is empty</p>
@@ -284,7 +284,7 @@
     </div>
   </div>
 
-  <div class="occasion">
+  <!-- <div class="occasion">
     <div class="occasion-input"></div>
     <label>Select Occasion</label>
 
@@ -298,11 +298,13 @@
       <option value="workout">Workout/Athletic</option>
       <option value="beach">Beach/Vacation</option>
       <option value="wedding">Wedding</option>
-    </select>
+    </select> -->
 
     <button class="recommend-btn" (click)="getRecommendations()">✨ Get Recommendations</button>
   </div>
 </div>
+  <!-- </div>
+</div> -->
 
 <div class="modal-overlay" *ngIf="showAddItemModal">
   <div class="modal-card">
@@ -395,5 +397,4 @@
       <button class="add-btn" (click)="addItem()">Add Item</button>
     </div>
   </div>
-</div>
 </div>
