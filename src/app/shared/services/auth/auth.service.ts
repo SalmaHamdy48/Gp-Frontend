@@ -11,12 +11,10 @@ export class AuthService {
 
   apiUrl = environment.apiUrl;
 
-  // الـ BehaviorSubject ده يخزن الcurrentUser ويقدر أي component يشترك فيه
   private _currentUser = new BehaviorSubject<any>(null);
   currentUser$ = this._currentUser.asObservable();
 
   constructor(private http: HttpClient) {
-    // لو فيه user مخزن في localStorage، نرجعه عند تحميل الصفحة
     const stored = localStorage.getItem('currentUser');
     if (stored) {
       this._currentUser.next(JSON.parse(stored));
@@ -26,6 +24,13 @@ export class AuthService {
   get currentUser() {
     return this._currentUser.value;
   }
+  clearSession(): void {
+  localStorage.removeItem('currentUser');
+  sessionStorage.clear();
+
+  // reset state
+  this._currentUser.next(null);
+}
 
   getCurrentUser(): Observable<any> {
   return this.http.get<any>(`${this.apiUrl}auth/me`);
@@ -34,8 +39,7 @@ export class AuthService {
   login(credentials: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}auth/login`, credentials).pipe(
       tap(res => {
-        // بعد تسجيل الدخول نخزن الـ user info
-        const userData = { id: res.user_id, token: res.access_token }; // <-- لو backend رجع user_id
+        const userData = { id: res.user_id, token: res.access_token }; 
         this._currentUser.next(userData);
         localStorage.setItem('currentUser', JSON.stringify(userData));
       })
@@ -46,4 +50,12 @@ export class AuthService {
   register(userData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}auth/register`, userData);
   }
+
+ logout(): Observable<any> {
+  return this.http.post(`${this.apiUrl}auth/logout`, {}).pipe(
+    tap(() => {
+      this.clearSession();
+    })
+  );
+}
 }

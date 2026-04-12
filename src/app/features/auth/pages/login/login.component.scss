@@ -271,6 +271,18 @@ input[type="password"]::placeholder {
   margin-right: auto;
 }
 
+.success-snackbar {
+  background: #4caf50;
+  color: white;
+  font-weight: 600;
+}
+
+.error-snackbar {
+  background: #f44336;
+  color: white;
+  font-weight: 600;
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   .card {

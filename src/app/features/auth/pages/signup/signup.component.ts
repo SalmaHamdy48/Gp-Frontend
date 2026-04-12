@@ -9,6 +9,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-signup',
@@ -24,18 +25,25 @@ export class SignupComponent implements OnInit {
 
   signupForm!: any;
   submitted = false;
-  router: any;
   email: string = '';
   password: string = ''
   username: string = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
-     this. signupForm = this.fb.group({
-      email : ['',  [Validators.required]],
-      password : ['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,}$/)]],
-      username: ['', Validators.required]
-    })
-  }
+  constructor(
+  private fb: FormBuilder,
+  private authService: AuthService,
+  private router: Router,
+  private snackBar: MatSnackBar
+) {
+  this.signupForm = this.fb.group({
+    email: ['', [Validators.required]],
+    password: [
+      '',
+      [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,}$/)]
+    ],
+    username: ['', Validators.required]
+  });
+}
 
   ngOnInit(): void {
    
@@ -45,14 +53,33 @@ export class SignupComponent implements OnInit {
   }
 
    onSubmit() {
-      this.authService.register({ email: this.email, password: this.password , username: this.username}).subscribe({
-        next: () => {
-          this.router.navigate(['/login']);
-          console.log('Registration successful');
-        },
-        error: (err: any) => {
-          console.error('Registration error:', err);
-        }
+  this.authService.register({
+    email: this.email,
+    password: this.password,
+    username: this.username
+  }).subscribe({
+    next: () => {
+
+      this.snackBar.open('Account created successfully 🎉', 'Close', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        panelClass: ['success-snackbar']
       });
-  }
+
+      this.router.navigate(['/login']);
+    },
+
+    error: (err: any) => {
+      this.snackBar.open('Signup failed ❌ Please try again', 'Close', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        panelClass: ['error-snackbar']
+      });
+
+      console.error('Registration error:', err);
+    }
+  });
+}
 }
